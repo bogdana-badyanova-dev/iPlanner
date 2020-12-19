@@ -1,0 +1,43 @@
+﻿@using iPlanner.Models;
+@model dynamic
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="flexboxRow">
+	<form method="get" asp-action="Create" asp-controller="Cards">
+		<input class="btn main-btn" onclick="showAddForm()" type="submit" value="Добавить задачу" />
+	</form>
+	<div class="flex">
+		@foreach (var boardItem in Model.boardsList)
+		{
+			<div accesskey="@(boardItem.Id)" id=@("board-"+boardItem.Id) class=@($"board {boardItem.Tag}-board")>
+				<div class="board-header">
+					<h2 class="title">@boardItem.Title</h2>
+					<p class="subtitle">@boardItem.SubTitle</p>
+					<div class="id">
+						<p>Board index: </p>
+						<p>@boardItem.Id</p>
+					</div>
+				</div>
+				<div class="tasks">
+					@foreach (var cardItem in Model.cardsList)
+					{
+						if (cardItem.Board_id == boardItem.Id)
+						{
+							var cardId = "card-" + cardItem.Id;
+							<div class="task" id=@cardId title="task" draggable="true">
+								<a asp-controller="Cards" asp-action="Details" asp-route-id="@cardItem.Id">
+									<h2>@cardItem.Title</h2>
+									<p>@cardItem.Text</p>
+								</a>
+							</div>
+						}
+					}
+				</div>
+			</div>
+			@*<div id="logci" class="log2"></div>*@
+		}
+	</div>
+	@*<a id="editId" asp-action="Edit" asp-route-id="1">vjhk</a>*@
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<iPlanner.Models.Board>
+@{
+	ViewData["Title"] = "Create";
+}
+
+
+
+
+
+<div class="flexboxRow jusCont">
+	<h1>Create</h1>
+	<form method="post" class="formFlex" asp-controller="Cards" asp-action="Create">
+		<div class="Card-row">
+			<div class="Card-col">
+				<p class="card-title">Title:</p>
+				<input type="text" name="Title" value="" />
+			</div>
+			<div class="Card-col">
+				<p class="card-title">Text</p>
+				<input type="text" name="Text" value="" />
+			</div>
+			<div class="Card-col">
+				<p class="card-title">Board</p>
+				<select name="Board_id">
+					@foreach (var item in Model)
+					{
+						<option value=@item.Id id=@("Id-"+item.Id)>@item.Title</option>
+					}
+				</select>
+			</div>
+			<div class="Card-col">
+				<label>&nbsp;</label>
+				<input class="btn main-btn" type="submit" value="Create" />
+			</div>
+		</div>
+	</form>
+	<a asp-action="Index" asp-controller="Home" class="goBack">Go back</a>
+</div>
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,31 @@
+﻿@model iPlanner.Models.Card
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+
+
+
+<div class="flexboxRow jusCont">
+	<h1>Details</h1>
+	<div class="Card-row">
+		<div class="Card-col">
+			<p class="card-title">@Html.DisplayNameFor(model => model.Title):</p>
+			<p class="card-info">@Html.DisplayFor(model => model.Title)</p>
+		</div>
+		<div class="Card-col">
+			<p class="card-title">@Html.DisplayNameFor(model => model.Text):</p>
+			<p class="card-info">@Html.DisplayFor(model => model.Text)</p>
+		</div>
+		<div class="Card-col">
+			<p class="card-title">Board number:</p>
+			<p class="card-info">@Html.DisplayFor(model => model.Board_id)</p>
+		</div>
+	</div>
+	<div class="FormDelete" style="margin-bottom: 30px;">
+		<a class="btn main-btn" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+		<a class="btn ghost-btn" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+	</div>
+	<a asp-action="Index" asp-controller="Home" class="goBack">Go back</a>
+</div>

@@ -1,0 +1,247 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Chrome/Safari/Opera */
+	-khtml-user-select: none;
+	/* Konqueror */
+	-moz-user-select: none;
+	/* Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+}
+
+:active, :hover, :focus {
+	outline: 0;
+	outline-offset: 0;
+}
+
+body, html {
+	/* background: rgb(245, 245, 245); */
+	min-height: 90%;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+p, h1, h2, h3 {
+	margin: 0;
+}
+
+.menu {
+	background: red;
+	padding: 18px 165px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+	margin-bottom: 60px;
+	background: #fff;
+}
+
+.logo {
+	font-size: 24px;
+	color: #7389FF;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+	line-height: 32px;
+	color: #7389FF;
+}
+
+.flexbox {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 155px;
+}
+.flexboxRow {
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+	margin: 0 155px;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.btn:active {
+	outline: none;
+	text-decoration: none;
+	box-shadow: none !important;
+}
+
+.board-header {
+	padding-left: 16px;
+	margin: 32px 32px 0 32px;
+	white-space: nowrap;
+}
+
+.btn {
+	padding: 10px 24px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	cursor:pointer;
+}
+
+.main-btn {
+	/*margin-left: 165px;*/
+	margin-bottom: 30px;
+	background: #7389FF;
+	color: #fff;
+	transition: background ease 0.3s;
+}
+.main-btn:hover {
+	background: #4e68f0;
+	transition: background ease 0.3s;
+}
+
+.ghost-btn {
+	margin-left: 20px;
+	margin-bottom: 30px;
+	background: #676d89;
+	color: #fff;
+	transition: background ease 0.3s;
+}
+.ghost-btn:hover {
+	background: #585c70;
+	transition: background ease 0.3s;
+}
+/*.todo-board, .doing-board, .done-board, .archive-board*/
+.board {
+	display: flex;
+	flex-direction: column;
+	/* padding: 32px; */
+	/* min-width: 23%; */
+	flex-grow: 1;
+	background: #F8F9FA;
+	flex-wrap: nowrap;
+	margin: 0 10px 0 0;
+	border-radius: 16px;
+	box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 50px;
+}
+.board .board-header {
+	border-left: 8px solid #7389FF;
+}
+.todo-board .board-header {
+	border-left: 8px solid #F66568;
+}
+
+.doing-board .board-header {
+	border-left: 8px solid #FFC773;
+}
+
+.done-board .board-header {
+	border-left: 8px solid #6BE795;
+}
+
+.archive-board .board-header {
+	border-left: 8px solid #7389FF;
+}
+
+.board-header h2 {
+	font-size: 30px;
+	font-family: "Notable", sans-serif;
+	text-transform: uppercase;
+	/* font-weight: bold; */
+	letter-spacing: 0.2rem;
+	margin-bottom: 8px;
+}
+
+.board-header p {
+	font-size: 13px;
+	color: #757575;
+}
+
+.id {
+	display: flex;
+	flex-direction: row;
+}
+
+.tasks {
+	padding: 0 32px 24px 32px;
+	height: 100%;
+	/* background: grey; */
+}
+
+.task {
+	margin-top: 24px;
+	background: #fff;
+	border-radius: 16px;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+	display: flex;
+}
+
+.task a {
+	padding: 16px 24px;
+	width: 100%;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 32px;
+}
+h3 {
+	font-size: 24px;
+}
+.Card-row {
+	margin-top: 30px;
+}
+.Card-row p {
+	font-size: 18px;
+}
+.Card-col {
+	display: flex;
+	margin-bottom: 10px;
+}
+.card-title {
+	font-weight: bold;
+	margin-right: 15px;
+}
+.FormDelete {
+	margin-top: 30px;
+}
+.jusCont {
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.goBack {
+	color: #7389FF;
+	font-size: 16px;
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+.goBack:hover {
+	text-decoration: underline;
+}
+.formFlex {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.formFlex .Card-col {
+	display: flex;
+	flex-direction: column;
+}
+.formFlex .Card-col .card-title {
+	margin-bottom: 10px;
+}
+.formFlex input:not(.btn), select {
+	padding: 7px 10px;
+	border-radius: 10px;
+	border: 1px solid #8d90a1;
+}

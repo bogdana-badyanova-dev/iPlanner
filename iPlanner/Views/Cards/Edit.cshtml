@@ -1,0 +1,32 @@
+﻿@model iPlanner.Models.Card
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<div class="flexboxRow jusCont">
+	<h1>Edit</h1>
+	<form class="formFlex" asp-action="Edit">
+		<div class="Card-row">
+			<div class="Card-col">
+				<p class="card-title">@Html.DisplayNameFor(model => model.Title):</p>
+				<input asp-for="Title" class="form-control" />
+			</div>
+			<div class="Card-col">
+				<p class="card-title">@Html.DisplayNameFor(model => model.Text):</p>
+				<input asp-for="Text" class="form-control" />
+			</div>
+			<div class="Card-col">
+				<p class="card-title">Board number:</p>
+				<input asp-for="Board_id" class="form-control" />
+			</div>
+		</div>
+		<input type="submit" value="Save" class="btn main-btn" style="margin-top: 20px;"/>
+		@*<a class="" asp-action="Edit" asp-route-id="@Model.Id" style="margin-top: 20px;">Edit</a>*@
+
+	</form>
+	<a asp-action="Index" asp-controller="Home" class="goBack">Go back</a>
+</div>
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
